@@ -84,3 +84,6 @@ _notebooks/**/*_content.md
 
 # Claude Code session artifacts
 .claude/
+
+# Local JDK install (too large for git, exceeds GitHub's 100MB file limit)
+oracleJdk-26/
