@@ -16,10 +16,15 @@ toc: true
   background: var(--panel, rgba(127,127,127,0.08));
   margin-bottom: 24px;
 }
+.wk1-table-wrap {
+  overflow-x: auto;
+  margin: 16px 0 28px;
+  border-radius: 8px;
+}
 .wk1-board {
   width: 100%;
+  min-width: 480px;
   border-collapse: collapse;
-  margin: 16px 0 28px;
   font-size: 0.95em;
 }
 .wk1-board th, .wk1-board td {
@@ -29,6 +34,9 @@ toc: true
 }
 .wk1-board th {
   background: var(--panel, rgba(127,127,127,0.12));
+}
+.wk1-board tbody tr:hover {
+  background: var(--panel, rgba(127,127,127,0.08));
 }
 .wk1-quest {
   border: 1px solid var(--ui-border, #444);
@@ -66,16 +74,29 @@ toc: true
   opacity: 0.85;
   margin: 4px 0 14px;
 }
-.wk1-xpbar {
-  height: 8px;
-  border-radius: 6px;
-  background: var(--ui-border, #444);
-  overflow: hidden;
+.wk1-doc-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
   margin: 18px 0 6px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px dashed var(--ui-border, #444);
+  font-size: 0.9em;
+  opacity: 0.9;
 }
-.wk1-xpbar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--pref-accent-color, #7c5cff), #45b7d1);
+.wk1-doc-status-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--pref-accent-color, #7c5cff);
+  color: #fff;
+  font-size: 0.8em;
+  font-weight: 700;
 }
 </style>
 
@@ -84,6 +105,8 @@ toc: true
 </div>
 
 ## 🗺️ Quest Board
+
+<div class="wk1-table-wrap" markdown="1">
 
 | # | Quest | Difficulty | XP | Type |
 |---|-------|:----------:|:--:|------|
@@ -96,10 +119,14 @@ toc: true
 | 7 | Fullstack Development | ★★☆ | 100 | Design thinking |
 | 8 | CSA MCQ Lessons | ★★★ 👑 | 150 | **Boss fight** — practice gauntlet |
 
+</div>
+
 **Total XP this week: 900** — clear all 8 for Sprint 1 mastery.
 
-<div class="wk1-xpbar"><div class="wk1-xpbar-fill" style="width: 100%;"></div></div>
-*(bar shows quests documented, not yet completed — that part's still pending)*
+<div class="wk1-doc-status">
+  <span class="wk1-doc-status-icon" aria-hidden="true">✓</span>
+  <span>All 8 quests are documented with live code runners below. This tracks <em>documentation</em>, not your completion — that's still on you.</span>
+</div>
 
 ---
 
